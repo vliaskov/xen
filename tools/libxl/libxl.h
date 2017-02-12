@@ -647,6 +647,7 @@ typedef struct libxl__ctx libxl_ctx;
  * If this is not defined, the qxl vga support is missed.
  */
 #define LIBXL_HAVE_QXL 1
+#define LIBXL_HAVE_VIRTIO 1
 
 /*
  * LIBXL_HAVE_SPICE_VDAGENT

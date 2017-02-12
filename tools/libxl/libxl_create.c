@@ -242,6 +242,7 @@ int libxl__domain_build_info_setdefault(libxl__gc *gc,
                     b_info->video_memkb = 0;
                 break;
             case LIBXL_VGA_INTERFACE_TYPE_QXL:
+            case LIBXL_VGA_INTERFACE_TYPE_VIRTIO:
                 LOG(ERROR,"qemu upstream required for qxl vga");
                 return ERROR_INVAL;
                 break;

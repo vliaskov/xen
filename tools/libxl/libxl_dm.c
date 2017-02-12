@@ -548,6 +548,7 @@ static int libxl__build_device_model_args_old(libxl__gc *gc,
             flexarray_append_pair(dm_args, "-vga", "none");
             break;
         case LIBXL_VGA_INTERFACE_TYPE_QXL:
+        case LIBXL_VGA_INTERFACE_TYPE_VIRTIO:
             break;
         default:
             LOGD(ERROR, domid, "Invalid emulated video card specified");
@@ -1138,6 +1139,8 @@ static int libxl__build_device_model_args_new(libxl__gc *gc,
                 GCSPRINTF("qxl-vga,vram_size_mb=%"PRIu64",ram_size_mb=%"PRIu64,
                 (b_info->video_memkb/2/1024), (b_info->video_memkb/2/1024) ) );
             break;
+        case LIBXL_VGA_INTERFACE_TYPE_VIRTIO:
+	    break;
         default:
             LOGD(ERROR, guest_domid, "Invalid emulated video card specified");
             return ERROR_INVAL;
